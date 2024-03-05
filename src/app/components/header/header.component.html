@@ -1,13 +1,28 @@
+<!-- header.component.html -->
+
 <div *ngIf="headerData" class="header-container">
+    <!-- Imagen de fondo del encabezado -->
     <img src="../../../assets/images/background-header.jpeg" alt="Header Background" class="header-image">
+
     <div class="header-text">
-        <h1 class="header-presentation">{{ this.headerData.header.presentation }}</h1>
-        <p class="header-description">{{ this.headerData.header.description }}</p>
-    <div class="scroll-icon-container">
-        <div class="circle">
-            <div class="line"></div>
-            <div class="line-reverse"></div>
+        <!-- Título del encabezado -->
+        <h1 class="header-presentation">{{ headerData.header.presentation }}</h1>
+        
+        <!-- Descripción del encabezado -->
+        <p class="header-description">{{ headerData.header.description }}</p>
+        
+        <!-- Icono de desplazamiento -->
+        <div class="scroll-icon-container" (click)="handleClickAndScroll()">
+            <!-- Botón transparente con icono de desplazamiento -->
+            <button class="transparent-button" style="color: black;">
+                <div class="circle">
+                    <div class="line"></div>
+                    <div class="line-reverse"></div>
+                </div>
+            </button>
         </div>
     </div>
-    </div>
 </div>
+
+<!-- Componente principal (sección principal de la página) -->
+<app-main id="mainSection" *ngIf="showMainComponent"></app-main>

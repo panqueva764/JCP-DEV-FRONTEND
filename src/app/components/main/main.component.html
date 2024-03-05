@@ -1,0 +1,25 @@
+<!-- main.component.html -->
+
+<div id="mainSection" class="main-section">
+    <!-- Contenedor principal de la sección principal -->
+
+    <div class="main-container">
+        <!-- Contenedor principal de contenido -->
+        
+        <div class="background-overlay"></div> <!-- Fondo negro semitransparente -->
+        
+        <!-- Comprueba si existen datos de botones para mostrar -->
+        <div *ngIf="headerData && headerData.main_content && headerData.main_content.buttons">
+            <!-- Lista de botones generada dinámicamente -->
+            <ul>
+                <li *ngFor="let key of getButtonKeys()">
+                    <!-- Botón con el icono del botón -->
+                    <button>{{ headerData.main_content.buttons[key].icon }}</button>
+                    
+                    <!-- Muestra el nombre del botón -->
+                    <h1>{{ headerData.main_content.buttons[key].name }}</h1>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

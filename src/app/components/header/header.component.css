@@ -1,3 +1,6 @@
+/* header.component.css */
+
+/* Estilos para el contenedor principal del encabezado */
 .header-container {
     position: relative;
     height: 100vh;
@@ -6,6 +9,7 @@
     box-sizing: border-box;
 }
 
+/* Estilos para la imagen de fondo del encabezado */
 .header-image {
     width: 100%;
     height: 100%;
@@ -16,6 +20,7 @@
     z-index: 0;
 }
 
+/* Estilos para el texto del encabezado */
 .header-text {
     position: absolute;
     top: 45%;
@@ -24,6 +29,7 @@
     color: white;
 }
 
+/* Estilos para la presentación del encabezado */
 .header-presentation {
     color: #fffffff6;
     letter-spacing: -1px;
@@ -34,6 +40,7 @@
     line-height: 1;
 }
 
+/* Estilos para la descripción del encabezado */
 .header-description {
     width: auto;
     max-width: 500px;
@@ -47,32 +54,36 @@
     font-stretch: expanded;
 }
 
+/* Estilos para el contenedor del icono de desplazamiento */
 .scroll-icon-container {
     position: absolute;
-    bottom: 20px;
-    left: 147%;
+    bottom: 45px;
+    left: 150%;
     transform: translateX(-50%);
     margin-top: 20px;
     cursor: pointer;
 }
 
+/* Estilos para el efecto de fondo del contenedor del icono de desplazamiento */
 .scroll-icon-container::after {
     content: '';
     position: absolute;
     bottom: -218px;
-    left: -40px;
-    width: 100%;
-    height: 40px;
+    left: -35px;
+    width: 80%;
+    height: 43px;
     background-color: rgba(255, 255, 255, 0.3);
     z-index: -1;
     border-radius: 50%;
     transition: background-color 0.3s ease;
 }
 
+/* Estilos para el icono de desplazamiento al hacer hover */
 .scroll-icon-container:hover::after {
     background-color: rgba(255, 255, 255, 0.5);
 }
 
+/* Estilos para el círculo del icono de desplazamiento */
 .circle {
     width: 40px;
     height: 40px;
@@ -87,6 +98,7 @@
     top: 220px;
 }
 
+/* Estilos para las líneas del icono de desplazamiento */
 .line, .line-reverse {
     width: 10px;
     height: 1px;
@@ -105,7 +117,9 @@
     right: 12px;
 }
 
+/* Estilos para pantallas de tamaño pequeño (móviles) */
 @media screen and (max-width: 480px) {
+    /* Estilos para la imagen de fondo del encabezado en pantallas pequeñas */
     .header-image {
         width: 100%;
         height: 100%;
@@ -116,6 +130,7 @@
         z-index: 0;
     }
 
+    /* Estilos para el texto del encabezado en pantallas pequeñas */
     .header-text {
         position: absolute;
         top: 45%;
@@ -124,6 +139,7 @@
         color: white;
     }
 
+    /* Estilos para la presentación del encabezado en pantallas pequeñas */
     .header-presentation {
         margin-top: 0px;
         margin-bottom: 17px;
@@ -131,11 +147,13 @@
         line-height: 1.2;
     }
 
+    /* Estilos para la descripción del encabezado en pantallas pequeñas */
     .header-description {
         border-radius: 10px;
         background: radial-gradient(circle, black, transparent);
     }
 
+    /* Estilos para el contenedor del icono de desplazamiento en pantallas pequeñas */
     .scroll-icon-container {
         display: block;
         position: absolute;
@@ -145,23 +163,34 @@
         cursor: pointer; 
     }
 
-
+    /* Estilos para el círculo del icono de desplazamiento en pantallas pequeñas */
     .circle {
         left: -25px;
     }
 
+    /* Estilos para el efecto de fondo del contenedor del icono de desplazamiento en pantallas pequeñas */
     .scroll-icon-container::after {
         content: '';
         position: absolute;
         bottom: -218px;
-        left: -26px;
-        width: 100%;
-        height: 40px;
+        left: -20px;
+        width: 81%;
+        height: 41px;
         background-color: rgba(255, 255, 255, 0.3);
         z-index: -1;
         border-radius: 50%;
         transition: background-color 0.3s ease;
     }
-    
-    
 }
+
+/* Estilos para botones transparentes */
+.transparent-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: white;
+}
+
+#mainSection {
+    scroll-behavior: smooth;
+  }
