@@ -10,15 +10,16 @@
             <ul class="grid-list" [ngClass]="{'move-to-top-left': !showButtons}">
                 <li *ngFor="let key of getButtonKeys()">
                     <!-- Botón con el icono del botón -->
-                    <button class="circle-button" (click)="handleButtonClick(headerData.main_content.host_backend + headerData.main_content.buttons[key].url)">
+                    <button  *ngIf="headerData.main_content.buttons[key].show" class="circle-button" (click)="handleButtonClick(key)">
                         <div class="outer-circle">
                             <div class="inner-circle">
                                 <span class="plus-sign">{{ headerData.main_content.buttons[key].icon }}</span>
                             </div>
                         </div>
-                    </button>
-                    <!-- Muestra el nombre del botón -->
+                                            <!-- Muestra el nombre del botón -->
                     <h2 class="button-name">{{ headerData.main_content.buttons[key].name }}</h2>
+                    </button>
+
                 </li>
             </ul>            
         </div>
