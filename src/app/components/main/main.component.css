@@ -1,12 +1,141 @@
 /* main.component.css */
+
+/* Estilos para la sección principal */
 #mainSection {
+    width: 100%; /* Ajusta el ancho según sea necesario */
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 25%);
     position: absolute;
     top: 100vh;
-    width:100%;
     height: 90vh;
     z-index: 1;
     overflow-x: hidden;
     color: white;
     left: 0%;
 }
+
+.main-container {
+    display: flex;
+    justify-content: center; /* Centra los elementos horizontalmente */
+    align-items: center; /* Centra los elementos verticalmente */
+    height: 100%;
+}
+
+/* Estilos para la lista de botones en el modo normal */
+ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Dos columnas de igual tamaño */
+    justify-content: center; /* Centra los botones horizontalmente */
+    gap: 100px; /* Ajusta el espacio entre los botones según sea necesario */
+    max-width: 400px; /* Ancho máximo del contenedor para limitar el número de botones por fila */
+    margin: 0 auto; /* Centra el contenedor en la página */
+}
+
+/* Estilos para cada botón */
+li {
+    list-style-type: none; /* Elimina los puntos de la lista */
+}
+
+.circle-button {
+    border: none;
+    background: none;
+    padding: 0;
+    cursor: pointer;
+    position: relative;
+}
+
+.outer-circle {
+    width: 80px; /* ajusta el tamaño del círculo exterior según sea necesario */
+    height: 80px;
+    border-radius: 50%;
+    background: conic-gradient(#FD7C69 0deg, #fd7d6969 180deg, #69332B 180deg, #69332b8b 360deg); /* coloca los dos colores en la mitad */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inner-circle {
+    width: 40px; /* ajusta el tamaño del círculo interior según sea necesario */
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgb(3, 0, 38);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.plus-sign {
+    color: white;
+    font-size: 24px; /* ajusta el tamaño del símbolo "+" según sea necesario */
+}
+
+/* main.component.css */
+
+/* Estilos para el contenedor del botón y el nombre del botón */
+.button-container {
+    display: flex; /* Usa el modelo de caja flexible */
+    flex-direction: column; /* Apila los elementos verticalmente */
+    align-items: center; /* Centra los elementos horizontalmente */
+    gap: 30px; /* Espacio entre el botón y el nombre del botón */
+    padding: 30px;
+}
+
+/* Estilos para el nombre del botón */
+.button-name {
+    color: white; /* Color del texto */
+    font-size: 14px; /* Tamaño de la fuente */
+    font-family: Consolas, monaco, monospace;
+    /* Otros estilos según sea necesario */
+}
+
+
+.info {
+    margin-top: -220px;
+    color: #dbdbdbf6;
+    font-family: Consolas, monaco, monospace;
+    line-height: 7;
+}
+
+.div-buttons {
+    margin-top: -100px;
+}
+
+/* Animación para mover los botones */
+.move-buttons {
+    animation: moveButtons 0.5s forwards;
+}
+
+@keyframes moveButtons {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-150% + 150px)); /* Ajusta el valor según sea necesario */
+    }
+}
+/* main.component.css */
+
+/* Agregamos estilos para la lista de botones cuando están en modo horizontal */
+.horizontal-list {
+    display: grid;
+    flex-wrap: initial; /* Los botones se envuelven automáticamente cuando no hay suficiente espacio */
+    justify-content: center; /* Centra los botones horizontalmente */
+    gap: 100px; /* Espacio entre los botones */
+}
+
+/* Agrega estilos para la lista de botones cuando están en modo de cuadrícula */
+.grid-list {
+    display: flex;
+    grid-template-columns: repeat(2, 1fr); /* Dos columnas de igual tamaño */
+    justify-content: center; /* Centra los botones horizontalmente */
+    gap: 120px; /* Espacio entre los botones */
+    max-width: 400px; /* Ancho máximo del contenedor para limitar el número de botones por fila */
+    margin: 0 auto; /* Centra el contenedor en la página */
+}
+
+.move-to-top-left {
+    transform: translate(-50%, -50%);
+    position: absolute;
+    top: 85px;
+    transition: all 2s cubic-bezier(0.06, 0.12, 0.04, 1.1); /* Duración de la transición de 2 segundos */
+}
+

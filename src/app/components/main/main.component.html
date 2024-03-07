@@ -1,25 +1,26 @@
-<!-- main.component.html -->
-
 <div id="mainSection" class="main-section">
     <!-- Contenedor principal de la sección principal -->
-
     <div class="main-container">
         <!-- Contenedor principal de contenido -->
-        
         <div class="background-overlay"></div> <!-- Fondo negro semitransparente -->
-        
-        <!-- Comprueba si existen datos de botones para mostrar -->
-        <div *ngIf="headerData && headerData.main_content && headerData.main_content.buttons">
+        <!-- Título de la sección -->
+        <div class="div-buttons" *ngIf="headerData && headerData.main_content && headerData.main_content.buttons">
+            <h1 class="info" *ngIf="showButtons">Obtén más información sobre mí</h1>
             <!-- Lista de botones generada dinámicamente -->
-            <ul>
+            <ul class="grid-list" [ngClass]="{'move-to-top-left': !showButtons}">
                 <li *ngFor="let key of getButtonKeys()">
                     <!-- Botón con el icono del botón -->
-                    <button>{{ headerData.main_content.buttons[key].icon }}</button>
-                    
+                    <button class="circle-button" (click)="handleButtonClick(headerData.main_content.host_backend + headerData.main_content.buttons[key].url)">
+                        <div class="outer-circle">
+                            <div class="inner-circle">
+                                <span class="plus-sign">{{ headerData.main_content.buttons[key].icon }}</span>
+                            </div>
+                        </div>
+                    </button>
                     <!-- Muestra el nombre del botón -->
-                    <h1>{{ headerData.main_content.buttons[key].name }}</h1>
+                    <h2 class="button-name">{{ headerData.main_content.buttons[key].name }}</h2>
                 </li>
-            </ul>
+            </ul>            
         </div>
     </div>
 </div>

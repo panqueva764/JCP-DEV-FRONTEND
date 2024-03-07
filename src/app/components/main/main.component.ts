@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HeaderService } from '../../services/header.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-main',
@@ -8,8 +9,9 @@ import { HeaderService } from '../../services/header.service';
 })
 export class MainComponent implements OnInit {
   headerData: any; // Aquí almacenaremos los datos del encabezado
+  showButtons: boolean = true; // Variable para controlar la visibilidad de los botones
 
-  constructor(private headerService: HeaderService) {}
+  constructor(private headerService: HeaderService, private router: Router) {}
 
   /**
    * Método ngOnInit.
@@ -30,7 +32,7 @@ export class MainComponent implements OnInit {
         return Object.keys(this.headerData.main_content.buttons);
     }
     return [];
-}
+  }
 
   /**
    * Método getHeaderData.
@@ -46,5 +48,15 @@ export class MainComponent implements OnInit {
         console.error('Error al obtener los datos del encabezado:', error);
       }
     );
+  }
+
+  /**
+   * Método handleButtonClick.
+   * Se ejecuta cuando se hace clic en alguno de los botones.
+   * Aplica la clase 'move-to-top-left' para mover los botones hacia la parte superior izquierda.
+   */
+  handleButtonClick(url: string): void {
+    this.showButtons = false; // Oculta los botones
+    this.router.navigate([url]);
   }
 }
