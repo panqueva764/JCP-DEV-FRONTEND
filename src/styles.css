@@ -16,3 +16,6 @@
     background-color: #0d0d0f; /* Color de fondo de la barra del scrollbar */
     border-radius: 4px; /* Borde redondeado */
   }
+  app-titles{
+  overflow-y: hidden;
+}

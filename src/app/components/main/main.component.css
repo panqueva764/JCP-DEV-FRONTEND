@@ -136,6 +136,7 @@ li {
     transform: translate(-50%, -50%);
     position: absolute;
     top: 85px;
+    left: 750px;
     transition: all 2s cubic-bezier(0.06, 0.12, 0.04, 1.1); /* Duración de la transición de 2 segundos */
 }
 

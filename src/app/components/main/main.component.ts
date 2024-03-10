@@ -10,8 +10,13 @@ import { ApiService } from '../../api.service';
   styleUrls: ['./main.component.css']
 })
 export class MainComponent implements OnInit {
-  headerData: any; // Aquí almacenaremos los datos del encabezado
-  showButtons: boolean = true; // Variable para controlar la visibilidad de los botones
+  headerData: any;
+  showButtons: boolean = true;
+  selectedComponent: string = ''; // Variable para almacenar el componente seleccionado
+  titlesData: any;
+  projectsData: any;
+  experiencesData: any;
+  certificatesData: any;
 
   constructor(private headerService: HeaderService, private apiService: ApiService) {}
 
@@ -38,6 +43,42 @@ export class MainComponent implements OnInit {
   }
 
   handleButtonClick(key: string): void {
-    this.apiService.navigateTo(key);
-  }
+    this.showButtons = false; // Oculta los botones
+      // Establece el componente seleccionado según el botón clickeado
+      this.selectedComponent = key;
+  
+      // Recupera los datos del componente si aún no se han recuperado
+      switch(key) {
+        case 'titles':
+          if (!this.titlesData) {
+            this.apiService.getTitlesData().subscribe(data => {
+              this.titlesData = data;
+            });
+          }
+          break;
+       /* case 'projects':
+          if (!this.projectsData) {
+            this.apiService.getProjectsData().subscribe(data => {
+              this.projectsData = data;
+            });
+          }
+          break;
+        case 'experiences':
+          if (!this.experiencesData) {
+            this.apiService.getExperiencesData().subscribe(data => {
+              this.experiencesData = data;
+            });
+          }
+          break;
+        case 'certificates':
+          if (!this.certificatesData) {
+            this.apiService.getCertificatesData().subscribe(data => {
+              this.certificatesData = data;
+            });
+          }
+          break; */
+        default:
+          console.error('Botón no reconocido:', key);
+      }
+    }
 }

@@ -1,27 +1,44 @@
+<!-- main.component.html -->
+
 <div id="mainSection" class="main-section">
-    <!-- Contenedor principal de la sección principal -->
     <div class="main-container">
-        <!-- Contenedor principal de contenido -->
-        <div class="background-overlay"></div> <!-- Fondo negro semitransparente -->
-        <!-- Título de la sección -->
+        <div class="background-overlay"></div>
         <div class="div-buttons" *ngIf="headerData && headerData.main_content && headerData.main_content.buttons">
             <h1 class="info" *ngIf="showButtons">Obtén más información sobre mí</h1>
-            <!-- Lista de botones generada dinámicamente -->
             <ul class="grid-list" [ngClass]="{'move-to-top-left': !showButtons}">
                 <li *ngFor="let key of getButtonKeys()">
-                    <!-- Botón con el icono del botón -->
-                    <button  *ngIf="headerData.main_content.buttons[key].show" class="circle-button" (click)="handleButtonClick(key)">
+                    <button *ngIf="headerData.main_content.buttons[key].show" class="circle-button" (click)="handleButtonClick(key)">
                         <div class="outer-circle">
                             <div class="inner-circle">
                                 <span class="plus-sign">{{ headerData.main_content.buttons[key].icon }}</span>
                             </div>
                         </div>
-                                            <!-- Muestra el nombre del botón -->
-                    <h2 class="button-name">{{ headerData.main_content.buttons[key].name }}</h2>
+                        <h2 class="button-name">{{ headerData.main_content.buttons[key].name }}</h2>
                     </button>
-
                 </li>
             </ul>            
         </div>
+
+        <div *ngIf="selectedComponent === 'titles'">
+            <app-titles [titles]="titlesData"></app-titles>
+          </div>
     </div>
+    <!-- Renderiza dinámicamente el componente correspondiente 
+    <app-titles *ngIf="selectedComponent === 'titles'" [titles]="titlesData"></app-titles>
+ <app-projects *ngIf="selectedComponent === 'projects'" [projects]="projectsData"></app-projects>
+    <app-experiences *ngIf="selectedComponent === 'experiences'" [experiences]="experiencesData"></app-experiences>
+    <app-certificates *ngIf="selectedComponent === 'certificates'" [certificates]="certificatesData"></app-certificates> -->
+
+      
+      <!--<div *ngIf="selectedComponent === 'projects'">
+        <app-projects [projects]="projectsData"></app-projects>
+      </div>
+      
+      <div *ngIf="selectedComponent === 'experiences'">
+        <app-experiences [experiences]="experiencesData"></app-experiences>
+      </div>
+      
+      <div *ngIf="selectedComponent === 'certificates'">
+        <app-certificates [certificates]="certificatesData"></app-certificates>
+      </div>-->
 </div>
