@@ -1,0 +1,91 @@
+.carousel-background {
+  background: black;
+  margin-top: 90px;
+  padding: 40px 15% 65px;
+}
+
+
+.carousel-container {
+  display: flex;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.carousel-container::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel-item {
+  width: 500px;
+  height: 150px;
+  margin-right: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  display: flex;
+}
+
+.image-container {
+  width: 3.5%;
+  position: absolute;
+  top: 386px;
+  left: 37%;
+}
+
+.logo-img {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 2px solid white;
+  border-radius: 10px;
+  box-shadow: 10px 9px 3px rgba(0, 0, 0, 0.2);
+  z-index: 1; /* Asegura que la imagen esté por encima del fondo del carrusel */
+}
+
+.info-container {
+  position: absolute;
+  top: 55%;
+  left: 49%;
+  transform: translate(-50%, -50%);
+  width: auto;
+  max-width: 500px;
+  color: #dddddde4;
+  letter-spacing: .3px;
+  margin-bottom: 0px;
+  font-family: Consolas, monaco, monospace;
+  font-size: 1em;
+  line-height: 1.5em;
+  font-weight: 300;
+  font-stretch: expanded;
+}
+
+.info-container h3 {
+  font-size: 15px;
+  color: #000000f6;
+  letter-spacing: 0px;
+  margin: -15px 29px -5px -5px;
+  font-family: Consolas, monaco, monospace;
+}
+
+.info-container p {
+  font-size: 12px;
+  color: #6c6463;
+  width: auto;
+  line-height: 0.5em;
+  margin: 15px -38px 10px 0px;
+}
+
+.project-link {
+  background-color: #c05f50f3;
+  color: white;
+  padding: 0px 10px;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 35px;
+  font-size: 10px;
+  position: absolute;
+  margin-top: -15px;
+}

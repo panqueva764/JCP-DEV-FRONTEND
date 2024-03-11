@@ -56,6 +56,13 @@ export class MainComponent implements OnInit {
             });
           }
           break;
+        case 'projects':
+          if (!this.projectsData) {
+            this.apiService.getProjectsData().subscribe(data => {
+              this.projectsData = data;
+            });
+          }
+          break;          
        /* case 'projects':
           if (!this.projectsData) {
             this.apiService.getProjectsData().subscribe(data => {

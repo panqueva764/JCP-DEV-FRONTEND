@@ -15,4 +15,9 @@ export class ApiService {
     const url = `${this.baseUrl}/api/titles`;
     return this.http.get<any>(url);
   }
+
+  getProjectsData(): Observable<any> {
+    const url = `${this.baseUrl}/api/projects`;
+    return this.http.get<any>(url);
+  }
 }
