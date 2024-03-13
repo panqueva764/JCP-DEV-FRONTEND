@@ -1,20 +1,30 @@
 <div class="carousel-background">
+  <div class="carousel-item">
+    <div class="slides" #slidesContainer>
 
-  <div class="carousel-container">
-    <div class="carousel-item">
-      <div class="image-container">
-        <img src="https://i.pinimg.com/736x/59/b2/ed/59b2ededc602810f0442383eedffeb2f.jpg" alt="Logo del proyecto"
-          class="logo-img">
-      </div>
-      <div class="info-container">
-        <h3>Nombre del Proyecto</h3>
-        <p>Descripción del proyecto</p>
-        <br>
-        <a href="url_del_proyecto" target="_blank" class="project-link">Ver Proyecto</a>
-      </div>
+      <ng-container *ngFor="let project of projects; let i = index">
+        <div id="slide-{{i}}">
+          <div class="image-container">
+            <img src="../../../assets/images/slide-{{ i + 1 }}.jpg" alt="Logo del proyecto" class="logo-img">
+          </div>
+          <div class="info-container">
+            <h3>{{ project.name }}</h3>
+            <p>{{ project.description }}</p>
+            <br>
+            <!-- Agrega la clase "disabled" si el proyecto está deshabilitado -->
+            <a *ngIf="project.enabled; else disabledLink" [href]="project.url" target="_blank" class="project-link">Ver Proyecto</a>
+            <ng-template #disabledLink>
+              <a href="#" class="disabled-link">Proyecto deshabilitado</a>
+            </ng-template>
+          </div>
+        </div>
+      </ng-container>
+      
     </div>
-    <!-- Agrega más divs .carousel-item para cada proyecto -->
+
+    <!-- Botones para mover el carrusel -->
+    <button class="back" (click)="scrollLeft()"><</button>
+    <button class="next"(click)="scrollRight()">></button>
+
   </div>
-
-
 </div>

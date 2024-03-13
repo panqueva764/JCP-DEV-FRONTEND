@@ -7,14 +7,16 @@
     /* Alinea los elementos en el inicio del contenedor */
 }
 
+.title-buttons {
+    animation: fadeIn 3s ease forwards;
+}
+
 .title-container {
     display: inline-block;
     margin-right: 50px;
     top: 20px;
     /* Ajusta el margen entre los contenedores de título */
-    animation: fadeIn 1s ease forwards;
 }
-
 
 .title-button {
     position: relative;
