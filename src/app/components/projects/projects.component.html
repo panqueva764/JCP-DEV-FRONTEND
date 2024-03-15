@@ -14,7 +14,7 @@
             <!-- Agrega la clase "disabled" si el proyecto está deshabilitado -->
             <a *ngIf="project.enabled; else disabledLink" [href]="project.url" target="_blank" class="project-link">Ver Proyecto</a>
             <ng-template #disabledLink>
-              <a href="#" class="disabled-link">Proyecto deshabilitado</a>
+              <a class="disabled-link">Proyecto deshabilitado</a>
             </ng-template>
           </div>
         </div>

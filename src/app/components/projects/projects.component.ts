@@ -29,17 +29,17 @@ export class ProjectsComponent {
 
   toggleVisibility(title: any): void {
     title.isVisible = !title.isVisible; // Alternar la visibilidad del título
-}
-
-scrollLeft(): void {
-  if (this.slidesContainer) {
-    this.slidesContainer.nativeElement.scrollLeft -= 300; // Ajusta el valor de acuerdo al ancho de tus slides
   }
-}
 
-scrollRight(): void {
-  if (this.slidesContainer) {
-    this.slidesContainer.nativeElement.scrollLeft += 300; // Ajusta el valor de acuerdo al ancho de tus slides
+  scrollLeft(): void {
+    if (this.slidesContainer) {
+      this.slidesContainer.nativeElement.scrollLeft -= 300; // Ajusta el valor de acuerdo al ancho de tus slides
+    }
   }
-}
+
+  scrollRight(): void {
+    if (this.slidesContainer) {
+      this.slidesContainer.nativeElement.scrollLeft += 300; // Ajusta el valor de acuerdo al ancho de tus slides
+    }
+  }
 }

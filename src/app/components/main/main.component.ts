@@ -63,13 +63,6 @@ export class MainComponent implements OnInit {
             });
           }
           break;          
-       /* case 'projects':
-          if (!this.projectsData) {
-            this.apiService.getProjectsData().subscribe(data => {
-              this.projectsData = data;
-            });
-          }
-          break;
         case 'experiences':
           if (!this.experiencesData) {
             this.apiService.getExperiencesData().subscribe(data => {
@@ -77,7 +70,7 @@ export class MainComponent implements OnInit {
             });
           }
           break;
-        case 'certificates':
+       /* case 'certificates':
           if (!this.certificatesData) {
             this.apiService.getCertificatesData().subscribe(data => {
               this.certificatesData = data;
