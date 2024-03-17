@@ -8,7 +8,8 @@ import { HeaderComponent } from './components/header/header.component';
 import { MainComponent } from './components/main/main.component';
 import { TitlesComponent } from './components/titles/titles.component';
 import { ProjectsComponent } from './components/projects/projects.component';
-import { ExperiencesComponent } from './components/experiences/experiences.component'; // Importa HeaderComponent
+import { ExperiencesComponent } from './components/experiences/experiences.component';
+import { CertificatesComponent } from './components/certificates/certificates.component'; // Importa HeaderComponent
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { ExperiencesComponent } from './components/experiences/experiences.compo
     MainComponent,
     TitlesComponent,
     ProjectsComponent,
-    ExperiencesComponent 
+    ExperiencesComponent,
+    CertificatesComponent 
   ],
   imports: [
     BrowserModule,

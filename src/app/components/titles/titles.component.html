@@ -3,7 +3,7 @@
     <div class="title-container">
       <button class="title-button" [class.enabled]="title.enabled" [class.disabled]="!title.enabled" (click)="toggleVisibility(title)">
         <div class="title-background"></div>
-        <a *ngIf="title.enabled" target="_blank" [href]="title.pdf_url">
+        <a class="item" *ngIf="title.enabled" target="_blank" [href]="title.pdf_url">
           <div class="title-info">
             <img class="logo" src="https://www.rets.epsjv.fiocruz.br/sites/default/files/styles/200_width/public/membros/logosena_1.png?itok=zvfewpWr" title="Sena">
             <h3>{{ title.institution }}</h3>

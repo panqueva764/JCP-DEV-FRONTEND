@@ -70,13 +70,13 @@ export class MainComponent implements OnInit {
             });
           }
           break;
-       /* case 'certificates':
+         case 'certificates':
           if (!this.certificatesData) {
             this.apiService.getCertificatesData().subscribe(data => {
               this.certificatesData = data;
             });
           }
-          break; */
+          break;
         default:
           console.error('Botón no reconocido:', key);
       }

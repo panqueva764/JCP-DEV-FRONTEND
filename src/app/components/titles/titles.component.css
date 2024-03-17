@@ -68,6 +68,10 @@
     transition: 1s;
 }
 
+.item {
+    text-decoration: none;
+}
+
 .title-info h3 {
     margin-bottom: 6px;
     font-family: Arial, sans-serif;

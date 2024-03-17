@@ -25,4 +25,9 @@ export class ApiService {
     const url = `${this.baseUrl}/api/experiences`;
     return this.http.get<any>(url);
   }
+
+  getCertificatesData(): Observable<any> {
+    const url = `${this.baseUrl}/api/certificates`;
+    return this.http.get<any>(url);
+  }
 }
