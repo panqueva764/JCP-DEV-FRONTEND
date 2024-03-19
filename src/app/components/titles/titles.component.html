@@ -1,4 +1,6 @@
 <div class="title-buttons">
+  <h1>Mis Titulos</h1>
+  <br>
   <ng-container *ngFor="let title of titles">
     <div class="title-container">
       <button class="title-button" [class.enabled]="title.enabled" [class.disabled]="!title.enabled" (click)="toggleVisibility(title)">
