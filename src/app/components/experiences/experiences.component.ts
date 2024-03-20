@@ -57,9 +57,7 @@ export class ExperiencesComponent {
   }
 
   parseLanguages(languageString: string): string[] {
-    // Elimina los corchetes y las comillas del string
     const cleanString = languageString.replace(/[\[\]"]+/g, '');
-    // Divide el string en un array de strings utilizando la coma como separador
     return cleanString.split(',').map(lang => lang.trim());
 }
 

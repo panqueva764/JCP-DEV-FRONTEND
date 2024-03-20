@@ -182,36 +182,36 @@
 
 @keyframes fadeIn {
   from {
-      opacity: 0;
+    opacity: 0;
   }
+
   to {
-      opacity: 1;
+    opacity: 1;
   }
 }
 
 @media screen and (max-width: 768px) {
   .carousel-background {
-      top: 170px;
+    top: 170px;
   }
 
-  .slides > div {
+  .slides>div {
     width: 290px;
     height: 180px;
-}
-.disabled-link {
-  margin-top: -15px;
-  left: 15px;
-}
-.project-link {
-width: 100px;
-}
+  }
+
+  .disabled-link {
+    margin-top: -15px;
+    left: 15px;
+  }
+
+  .project-link {
+    width: 100px;
+  }
 }
 
-@media only screen and (max-width: 600px) {
-}
+@media only screen and (max-width: 600px) {}
 
-@media only screen and (min-width: 601px) and (max-width: 1024px) {
-}
+@media only screen and (min-width: 601px) and (max-width: 1024px) {}
 
-@media only screen and (min-width: 1025px) {
-}
+@media only screen and (min-width: 1025px) {}

@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http'; // Importa HttpClientModule
+import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
@@ -9,7 +9,8 @@ import { MainComponent } from './components/main/main.component';
 import { TitlesComponent } from './components/titles/titles.component';
 import { ProjectsComponent } from './components/projects/projects.component';
 import { ExperiencesComponent } from './components/experiences/experiences.component';
-import { CertificatesComponent } from './components/certificates/certificates.component'; // Importa HeaderComponent
+import { CertificatesComponent } from './components/certificates/certificates.component';
+import { InfoComponent } from './components/info/info.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { CertificatesComponent } from './components/certificates/certificates.co
     TitlesComponent,
     ProjectsComponent,
     ExperiencesComponent,
-    CertificatesComponent 
+    CertificatesComponent,
+    InfoComponent 
   ],
   imports: [
     BrowserModule,
@@ -27,8 +29,7 @@ import { CertificatesComponent } from './components/certificates/certificates.co
     RouterModule.forRoot([
       { path: '', component: MainComponent },
       { path: 'titles', component: TitlesComponent },
-      // Agrega las rutas de los otros componentes aquí
-    ], { scrollPositionRestoration: 'disabled' }) // Desactiva el scroll por defecto
+    ], { scrollPositionRestoration: 'disabled' })
   ],
   providers: [],
   bootstrap: [AppComponent]

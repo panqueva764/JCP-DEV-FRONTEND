@@ -17,6 +17,8 @@ export class MainComponent implements OnInit {
   projectsData: any;
   experiencesData: any;
   certificatesData: any;
+  infoData: any;
+
 
   constructor(private headerService: HeaderService, private apiService: ApiService) {}
 
@@ -43,11 +45,10 @@ export class MainComponent implements OnInit {
   }
 
   handleButtonClick(key: string): void {
-    this.showButtons = false; // Oculta los botones
-      // Establece el componente seleccionado según el botón clickeado
+    this.showButtons = false;
+
       this.selectedComponent = key;
   
-      // Recupera los datos del componente si aún no se han recuperado
       switch(key) {
         case 'titles':
           if (!this.titlesData) {
@@ -74,6 +75,13 @@ export class MainComponent implements OnInit {
           if (!this.certificatesData) {
             this.apiService.getCertificatesData().subscribe(data => {
               this.certificatesData = data;
+            });
+          }
+          break;
+          case 'info':
+          if (!this.infoData) {
+            this.apiService.getInfoData().subscribe(data => {
+              this.infoData = data;
             });
           }
           break;
