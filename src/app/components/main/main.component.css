@@ -140,7 +140,8 @@ li {
 
 @media screen and (max-width: 768px) {
     .info {
-        line-height: 2;
+        line-height: 3;
+        margin-top: 420px;
     }
 
     .grid-list {

@@ -43,7 +43,7 @@ export class HeaderComponent implements OnInit {
     this.showMainComponent = true;
     setTimeout(() => {
       this.scrollToMain();
-    }, 100); // Pequeña espera para asegurarse de que showMainComponent se haya actualizado
+    }, 100);
   }
 
   /**
@@ -53,11 +53,11 @@ export class HeaderComponent implements OnInit {
   scrollToMain(): void {
     const mainSection = document.getElementById('mainSection');
     if (mainSection) {
-      const topOffset = 100; // Ajusta este valor según sea necesario
+      const topOffset = 100;
       const desiredPosition = mainSection.offsetTop - topOffset;
-      const increment = 10; // Ajusta el incremento de desplazamiento según sea necesario
-      const interval = 10; // Ajusta el intervalo de tiempo entre cada incremento
-  
+      const increment = 10;
+      const interval = 10;
+
       let currentPosition = window.scrollY || window.pageYOffset;
       const scrollTowardsMain = () => {
         if (currentPosition < desiredPosition) {
@@ -72,11 +72,11 @@ export class HeaderComponent implements OnInit {
           window.scrollTo(0, desiredPosition);
         }
       };
-  
+
       scrollTowardsMain();
     }
   }
-  
+
 
   /**
    * Maneja el evento de scroll de la ventana.
@@ -86,17 +86,17 @@ export class HeaderComponent implements OnInit {
   onScroll(): void {
     console.log('Scroll detectado');
     const scrollPosition = window.scrollY || window.pageYOffset;
-    const threshold = 5; // Umbral de sensibilidad
-  
+    const threshold = 5;
+
     if (scrollPosition > threshold && !this.mainComponentActivated) {
       console.log('Primer scroll detectado');
       this.showMainComponent = true;
-      this.mainComponentActivated = true; // Marca el primer scroll como detectado
-  
+      this.mainComponentActivated = true;
+
       setTimeout(() => {
         this.scrollToMain();
-      }, 100); // Pequeña espera para asegurarse de que showMainComponent se haya actualizado
-    }
+      }, 100);
     }
   }
+}
 

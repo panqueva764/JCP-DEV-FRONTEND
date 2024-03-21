@@ -8,7 +8,7 @@ import { ApiService } from 'src/app/api.service';
   styleUrls: ['./certificates.component.css']
 })
 export class CertificatesComponent {
-  @Input() certificates: Record<string, any> = {}; // Cambia el tipo de certificates a un objeto
+  @Input() certificates: Record<string, any> = {};
   @ViewChild('slidesContainer') slidesContainer: ElementRef | undefined;
   positions = ['Front', 'Back', 'BD', 'Architecture'];
   selectedPosition: string | undefined;
@@ -20,10 +20,13 @@ export class CertificatesComponent {
     this.getCertificates();
   }
 
+  /**
+   * Obtiene los datos de los certificados mediante la API.
+   */
   getCertificates(): void {
     this.apiService.getCertificatesData().subscribe(
       (data: any) => {
-        this.certificates = data; // Asigna los datos recibidos a certificates
+        this.certificates = data;
         console.log('Datos de Certificados:', this.certificates);
       },
       (error: any) => {
@@ -32,15 +35,24 @@ export class CertificatesComponent {
     );
   } 
 
+  /**
+   * Filtra los certificados según la posición especificada.
+   * @param position La posición para filtrar los certificados.
+   */
   filterCertificates(position: string): void {
-    if (this.certificates[position]) { // Verifica si hay certificados para la posición
+    if (this.certificates[position]) {
       this.selectedPosition = position;
-      this.filteredCertificates = this.certificates[position]; // Obtiene los certificados correspondientes a la posición
+      this.filteredCertificates = this.certificates[position];
     } else {
       console.error('No hay certificados para la posición:', position);
     }
   }
   
+  /**
+   * Devuelve una versión formateada del título de la posición.
+   * @param position La posición de los certificados.
+   * @returns Una cadena formateada del título de la posición.
+   */
   formattedCertificates(position: string): string  {
     switch (position) {
       case 'Front':
@@ -56,16 +68,26 @@ export class CertificatesComponent {
     }
   }
 
+  /**
+   * Alterna la visibilidad del título.
+   * @param title El título cuya visibilidad se va a alternar.
+   */
   toggleVisibility(title: any): void {
     title.isVisible = !title.isVisible;
   }
 
+  /**
+   * Desplaza el contenedor de diapositivas hacia la izquierda.
+   */
   scrollLeft(): void {
     if (this.slidesContainer) {
       this.slidesContainer.nativeElement.scrollLeft -= 300;
     }
   }
 
+  /**
+   * Desplaza el contenedor de diapositivas hacia la derecha.
+   */
   scrollRight(): void {
     if (this.slidesContainer) {
       this.slidesContainer.nativeElement.scrollLeft += 300;
