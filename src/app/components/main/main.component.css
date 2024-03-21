@@ -1,0 +1,158 @@
+/* main.component.css */
+
+#mainSection {
+    width: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 25%);
+    position: absolute;
+    top: 100vh;
+    height: 90vh;
+    z-index: 1;
+    overflow-x: hidden;
+    color: white;
+    left: 0%;
+}
+
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    gap: 100px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+li {
+    list-style-type: none;
+}
+
+.circle-button {
+    border: none;
+    background: none;
+    padding: 0;
+    cursor: pointer;
+    position: relative;
+}
+
+.outer-circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: conic-gradient(#FD7C69 0deg, #fd7d6969 180deg, #69332B 180deg, #69332b8b 360deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inner-circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgb(3, 0, 38);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.plus-sign {
+    color: white;
+    font-size: 24px;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding: 30px;
+}
+
+.button-name {
+    color: white;
+    font-size: 14px;
+    font-family: Consolas, monaco, monospace;
+}
+
+.info {
+    margin-top: -220px;
+    color: #dbdbdbf6;
+    font-family: Consolas, monaco, monospace;
+    line-height: 7;
+}
+
+.div-buttons {
+    margin-top: -100px;
+}
+
+.move-buttons {
+    animation: moveButtons 0.5s forwards;
+}
+
+@keyframes moveButtons {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(calc(-150% + 150px));
+    }
+}
+
+.horizontal-list {
+    display: grid;
+    flex-wrap: initial;
+    justify-content: center;
+    gap: 100px;
+}
+
+.grid-list {
+    display: flex;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    gap: 120px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.move-to-top-left {
+    transform: translate(-50%, -50%);
+    position: absolute;
+    top: 85px;
+    left: 750px;
+    transition: all 2s cubic-bezier(0.06, 0.12, 0.04, 1.1);
+}
+
+#mainSection {
+    text-align: center;
+    padding-top: 50px;
+}
+
+#mainSection p {
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+@media screen and (max-width: 768px) {
+    .info {
+        line-height: 3;
+        margin-top: 420px;
+    }
+
+    .grid-list {
+        display: inline-grid;
+        left: 200px;
+        top: 350px;
+    }
+}
+
+@media only screen and (max-width: 600px) {}
+
+@media only screen and (min-width: 601px) and (max-width: 1024px) {}
+
+@media only screen and (min-width: 1025px) {}

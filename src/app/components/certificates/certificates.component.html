@@ -1,0 +1,57 @@
+<!-- certificates.component.html -->
+<div class="buttons">
+  <a *ngFor="let position of positions" (click)="filterCertificates(position)"
+    [class.active]="position === selectedPosition">
+    <button href="#" class="ov-btn-grow-box">{{ formattedCertificates(position)}}</button>
+  </a>
+</div>
+<div *ngIf="filteredCertificates">
+  <div class="certificate-buttons">
+    <div class="carousel-background">
+      <div class="carousel-item">
+        <div class="slides" #slidesContainer>
+          <ng-container *ngFor="let title of filteredCertificates; let i = index">
+            <div id="slide-{{i}}">
+              <div class="title-container">
+                <button class="title-button" [class.enabled]="title['enabled']" [class.disabled]="!title['enabled']"
+                  (click)="toggleVisibility(title)">
+                  <div class="title-background"></div>
+                  <a class="item" *ngIf="title['enabled']" target="_blank" [href]="title['pdf_url']">
+                    <div class="title-info">
+                      <img class="logo" src="../../../assets/images/plantform-{{title['platform']}}.jpg" title="Sena">
+                      <h3>{{ title['institution'] }}</h3>
+                      <p>Curso de</p>
+                      <p>{{ title['name'] }}</p>
+                      <br>
+                      <p>{{ title['duration'] }} de curso</p>
+                      <img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" title="Check">
+                    </div>
+                  </a>
+                  <div *ngIf="!title['enabled']" class="title-info">
+                    <img class="logo"
+                      src="https://pbs.twimg.com/profile_images/1443911892519563267/MOf-iz1F_400x400.jpg"
+                      title="Manuela Beltran">
+                    <h3>{{ title['institution'] }}</h3>
+                    <p>Curso de</p>
+                    <p>{{ title['name'] }}</p>
+                    <p>a</p>
+                    <p>Juan Camilo Panqueva</p>
+                    <p>en el año </p>
+                    <p>{{ title['year'] }}</p>
+                    <img src="https://cdn.icon-icons.com/icons2/2844/PNG/512/action_unavailable_icon_181083.png"
+                      title="No Check">
+                  </div>
+                </button>
+                <a *ngIf="title && title['name']" (click)="toggleVisibility(title)">
+                  <p class="title-name">{{ title['name'] }}</p>
+                </a>
+              </div>
+            </div>
+            <button class="back" (click)="scrollLeft()"><</button>
+            <button class="next" (click)="scrollRight()">></button>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> 

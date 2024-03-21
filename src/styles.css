@@ -1,1 +1,33 @@
-/* You can add global styles to this file, and also import other style files */
+/* Oculta el scrollbar predeterminado */
+::-webkit-scrollbar {
+    width: 6px; /* Ancho del scrollbar */
+  }
+
+  /* Estilo para la pista del scrollbar */
+  ::-webkit-scrollbar-track {
+    background-color: transparent;
+    background-color: #b6b6b6; /* Color de fondo de la barra del scrollbar */
+    /* Color de fondo de la pista del scrollbar */
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    height: 60px; /* Altura de la barra del scrollbar */
+    margin-right: -5px; /* Posición superior de la barra del scrollbar */
+    background-color: #0d0d0f; /* Color de fondo de la barra del scrollbar */
+    border-radius: 4px; /* Borde redondeado */
+  }
+  app-titles{
+  overflow-y: hidden;
+}
+
+@media only screen and (max-width: 600px) {
+  /* Estilos para pantallas con un ancho máximo de 600px */
+}
+
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  /* Estilos para pantallas con un ancho mínimo de 601px y un ancho máximo de 1024px */
+}
+
+@media only screen and (min-width: 1025px) {
+  /* Estilos para pantallas con un ancho mínimo de 1025px */
+}

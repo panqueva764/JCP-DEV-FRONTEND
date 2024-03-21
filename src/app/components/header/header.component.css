@@ -1,0 +1,179 @@
+/* header.component.css */
+.header-container {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    border: 10px solid rgba(0, 0, 0, 0.7);
+    box-sizing: border-box;
+}
+
+.header-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+.header-text {
+    position: absolute;
+    top: 45%;
+    left: 100px;
+    transform: translateY(-50%);
+    color: white;
+}
+
+.header-presentation {
+    color: #fffffff6;
+    letter-spacing: -1px;
+    margin: 33px 0 33px -3px;
+    padding-left: 0;
+    font-family: Consolas, monaco, monospace;
+    font-size: 1.5em;
+    line-height: 1;
+}
+
+.header-description {
+    width: auto;
+    max-width: 500px;
+    color: #dddddde4;
+    letter-spacing: .3px;
+    margin-bottom: 0px;
+    font-family: Consolas, monaco, monospace;
+    font-size: 1em;
+    line-height: 1.5em;
+    font-weight: 300;
+    font-stretch: expanded;
+}
+
+.scroll-icon-container {
+    position: absolute;
+    bottom: 45px;
+    left: 150%;
+    transform: translateX(-50%);
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.scroll-icon-container::after {
+    content: '';
+    position: absolute;
+    bottom: -218px;
+    left: -35px;
+    width: 80%;
+    height: 43px;
+    background-color: rgba(255, 255, 255, 0.3);
+    z-index: -1;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+.scroll-icon-container:hover::after {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.circle {
+    width: 40px;
+    height: 40px;
+    border: 2px solid white;
+    background: rgba(255, 255, 255, 0.305);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    left: -40px;
+    top: 222px;
+}
+
+.line,
+.line-reverse {
+    width: 10px;
+    height: 1px;
+    background-color: white;
+    position: absolute;
+    bottom: 17px;
+}
+
+.line {
+    transform: rotate(45deg);
+    left: 11px;
+}
+
+.line-reverse {
+    transform: rotate(-45deg);
+    right: 12px;
+}
+
+@media screen and (max-width: 480px) {
+    .header-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 0;
+    }
+
+    .header-text {
+        position: absolute;
+        top: 45%;
+        left: 25px;
+        transform: translateY(-50%);
+        color: white;
+    }
+
+    .header-presentation {
+        margin-top: 0px;
+        margin-bottom: 17px;
+        font-size: 30px;
+        line-height: 1.2;
+    }
+
+    .header-description {
+        border-radius: 10px;
+        background: radial-gradient(circle, black, transparent);
+    }
+
+    .scroll-icon-container {
+        display: block;
+        position: absolute;
+        bottom: 100px;
+        left: 55%;
+        margin-top: 20px;
+        cursor: pointer;
+    }
+
+    .circle {
+        left: -25px;
+    }
+
+    .scroll-icon-container::after {
+        content: '';
+        position: absolute;
+        bottom: -218px;
+        left: -20px;
+        width: 81%;
+        height: 41px;
+        background-color: rgba(255, 255, 255, 0.3);
+        z-index: -1;
+        border-radius: 50%;
+        transition: background-color 0.3s ease;
+    }
+}
+
+.transparent-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: white;
+}
+
+@media only screen and (max-width: 600px) {}
+
+@media only screen and (min-width: 601px) and (max-width: 1024px) {}
+
+@media only screen and (min-width: 1025px) {}
