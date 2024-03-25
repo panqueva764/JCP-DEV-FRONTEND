@@ -7,42 +7,65 @@ import { ApiService } from 'src/app/api.service';
   styleUrls: ['./experiences.component.css']
 })
 export class ExperiencesComponent {
-  @Input() experiences: any[] = []; // Asegúrate de agregar la entrada @Input() aquí
-  @ViewChild('slidesContainer') slidesContainer: ElementRef | undefined;
+  @Input() experiences: any[] = []; // Almacena los datos de las experiencias
+  @ViewChild('slidesContainer') slidesContainer: ElementRef | undefined; // Referencia al contenedor de diapositivas
 
   constructor(private apiService: ApiService) { }
 
+  /**
+   * Método que se ejecuta al inicializar el componente.
+   * Obtiene los datos de las experiencias.
+   */
   ngOnInit(): void {
-    this.getExperiences(); // Llama al método para obtener los títulos
+    this.getExperiences();
   }
+
+  /**
+   * Obtiene los datos de las experiencias mediante el servicio ApiService.
+   */
   getExperiences(): void {
     this.apiService.getExperiencesData().subscribe(
       (data: any) => {
-        this.experiences = data; // Asigna los datos recibidos a la propiedad experiences
-        console.log('Datos de títulos:', this.experiences);
+        this.experiences = data;
+        console.log('Datos de experiencias:', this.experiences);
       },
       (error: any) => {
-        console.error('Error al obtener los títulos:', error);
+        console.error('Error al obtener las experiencias:', error);
       }
     );
   }
 
+  /**
+   * Alterna la visibilidad de un título de experiencia.
+   * @param title El título de la experiencia.
+   */
   toggleVisibility(title: any): void {
-    title.isVisible = !title.isVisible; // Alternar la visibilidad del título
+    title.isVisible = !title.isVisible;
   }
 
+  /**
+   * Desplaza el contenedor de diapositivas hacia la izquierda.
+   */
   scrollLeft(): void {
     if (this.slidesContainer) {
-      this.slidesContainer.nativeElement.scrollLeft -= 300; // Ajusta el valor de acuerdo al ancho de tus slides
+      this.slidesContainer.nativeElement.scrollLeft -= 300;
     }
   }
 
+  /**
+   * Desplaza el contenedor de diapositivas hacia la derecha.
+   */
   scrollRight(): void {
     if (this.slidesContainer) {
-      this.slidesContainer.nativeElement.scrollLeft += 300; // Ajusta el valor de acuerdo al ancho de tus slides
+      this.slidesContainer.nativeElement.scrollLeft += 300;
     }
   }
 
+  /**
+   * Obtiene la URL correspondiente a la experiencia.
+   * @param name El nombre de la experiencia.
+   * @returns La URL asociada a la experiencia.
+   */
   getExperienceUrl(name: string): string {
     switch (name) {
       case 'Motor Flash':
@@ -56,12 +79,13 @@ export class ExperiencesComponent {
     }
   }
 
+  /**
+   * Analiza una cadena de lenguajes separados por comas y la convierte en un array de strings.
+   * @param languageString La cadena de lenguajes.
+   * @returns Un array de strings que representan los lenguajes.
+   */
   parseLanguages(languageString: string): string[] {
-    // Elimina los corchetes y las comillas del string
     const cleanString = languageString.replace(/[\[\]"]+/g, '');
-    // Divide el string en un array de strings utilizando la coma como separador
     return cleanString.split(',').map(lang => lang.trim());
-}
-
-  
+  }
 }

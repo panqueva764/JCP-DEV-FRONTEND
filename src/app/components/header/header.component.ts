@@ -43,7 +43,7 @@ export class HeaderComponent implements OnInit {
     this.showMainComponent = true;
     setTimeout(() => {
       this.scrollToMain();
-    }, 100); // Pequeña espera para asegurarse de que showMainComponent se haya actualizado
+    }, 100);
   }
 
   /**
@@ -72,7 +72,7 @@ scrollToMain(): void {
           window.scrollTo(0, desiredPosition);
         }
       };
-  
+
       scrollTowardsMain();
     }
   }
@@ -85,17 +85,17 @@ scrollToMain(): void {
   onScroll(): void {
     console.log('Scroll detectado');
     const scrollPosition = window.scrollY || window.pageYOffset;
-    const threshold = 5; // Umbral de sensibilidad
-  
+    const threshold = 5;
+
     if (scrollPosition > threshold && !this.mainComponentActivated) {
       console.log('Primer scroll detectado');
       this.showMainComponent = true;
-      this.mainComponentActivated = true; // Marca el primer scroll como detectado
-  
+      this.mainComponentActivated = true;
+
       setTimeout(() => {
         this.scrollToMain();
-      }, 100); // Pequeña espera para asegurarse de que showMainComponent se haya actualizado
-    }
+      }, 100);
     }
   }
+}
 

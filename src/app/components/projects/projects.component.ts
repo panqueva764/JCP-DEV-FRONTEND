@@ -7,39 +7,57 @@ import { ApiService } from '../../api.service';
   styleUrls: ['./projects.component.css']
 })
 export class ProjectsComponent {
-  @Input() projects: any[] = []; // Asegúrate de agregar la entrada @Input() aquí
-  @ViewChild('slidesContainer') slidesContainer: ElementRef | undefined;
+  @Input() projects: any[] = []; // Almacena los datos de los proyectos
+  @ViewChild('slidesContainer') slidesContainer: ElementRef | undefined; // Referencia al contenedor de diapositivas
 
   constructor(private apiService: ApiService) { }
 
+  /**
+   * Método que se ejecuta al inicializar el componente.
+   * Obtiene los datos de los proyectos.
+   */
   ngOnInit(): void {
-    this.getProjects(); // Llama al método para obtener los títulos
+    this.getProjects();
   }
+
+  /**
+   * Obtiene los datos de los proyectos mediante el servicio ApiService.
+   */
   getProjects(): void {
     this.apiService.getProjectsData().subscribe(
       (data: any) => {
-        this.projects = data; // Asigna los datos recibidos a la propiedad projects
-        console.log('Datos de títulos:', this.projects);
+        this.projects = data;
+        console.log('Datos de proyectos:', this.projects);
       },
       (error: any) => {
-        console.error('Error al obtener los títulos:', error);
+        console.error('Error al obtener los proyectos:', error);
       }
     );
   }
 
-  toggleVisibility(title: any): void {
-    title.isVisible = !title.isVisible; // Alternar la visibilidad del título
+  /**
+   * Alterna la visibilidad de un proyecto.
+   * @param project El proyecto a modificar.
+   */
+  toggleVisibility(project: any): void {
+    project.isVisible = !project.isVisible;
   }
 
+  /**
+   * Desplaza el contenido del contenedor de diapositivas hacia la izquierda.
+   */
   scrollLeft(): void {
     if (this.slidesContainer) {
-      this.slidesContainer.nativeElement.scrollLeft -= 300; // Ajusta el valor de acuerdo al ancho de tus slides
+      this.slidesContainer.nativeElement.scrollLeft -= 300;
     }
   }
 
+  /**
+   * Desplaza el contenido del contenedor de diapositivas hacia la derecha.
+   */
   scrollRight(): void {
     if (this.slidesContainer) {
-      this.slidesContainer.nativeElement.scrollLeft += 300; // Ajusta el valor de acuerdo al ancho de tus slides
+      this.slidesContainer.nativeElement.scrollLeft += 300;
     }
   }
 }

@@ -119,7 +119,10 @@ img {
 
 @media screen and (max-width: 768px) {
     .title-buttons {        
-        margin-top: 920px;
+        margin-top: 1450px;
+    }
+    .title-container {
+        margin-right: 5px;
     }
 }
 

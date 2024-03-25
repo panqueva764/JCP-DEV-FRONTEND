@@ -30,4 +30,9 @@ export class ApiService {
     const url = `${this.baseUrl}/api/certificates`;
     return this.http.get<any>(url);
   }
+
+  getInfoData(): Observable<any> {
+    const url = `${this.baseUrl}/api/api-response`;
+    return this.http.get<any>(url);
+  }
 }

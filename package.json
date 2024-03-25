@@ -1,12 +1,17 @@
 {
   "name": "jcp-dev-front",
   "version": "0.0.0",
+  "engines": {
+    "node": "18.x",
+    "npm": "6.x"
+  },
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "npm run build && ng serve --port $PORT --host 0.0.0.0",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "postinstall": "npm run build"
   },
   "private": true,
   "dependencies": {

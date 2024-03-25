@@ -7,18 +7,25 @@ import { ApiService } from '../../api.service';
   styleUrls: ['./titles.component.css']
 })
 export class TitlesComponent {
-  @Input() titles: any[] = []; // Asegúrate de agregar la entrada @Input() aquí
+  @Input() titles: any[] = []; // Almacena los datos de los títulos
 
   constructor(private apiService: ApiService) { }
 
+  /**
+   * Método que se ejecuta al inicializar el componente.
+   * Obtiene los datos de los títulos.
+   */
   ngOnInit(): void {
-    this.getTitles(); // Llama al método para obtener los títulos
+    this.getTitles();
   }
 
+  /**
+   * Obtiene los datos de los títulos mediante el servicio ApiService.
+   */
   getTitles(): void {
     this.apiService.getTitlesData().subscribe(
       (data: any) => {
-        this.titles = data; // Asigna los datos recibidos a la propiedad titles
+        this.titles = data;
         console.log('Datos de títulos:', this.titles);
       },
       (error: any) => {
@@ -27,9 +34,12 @@ export class TitlesComponent {
     );
   }
 
+  /**
+   * Alterna la visibilidad de un título.
+   * @param title El título a modificar.
+   */
   toggleVisibility(title: any): void {
-    title.isVisible = !title.isVisible; // Alternar la visibilidad del título
-}
+    title.isVisible = !title.isVisible;
+  }
 
 }
-
