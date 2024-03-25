@@ -208,10 +208,48 @@ width: 100px;
 }
 
 @media only screen and (max-width: 600px) {
+
+  .carousel-item button {
+    top: 115%;
+
+}
+  .back {
+    left: 118px;
+
+}
+.next {
+  right: 116px;
+
+}
 }
 
 @media only screen and (min-width: 601px) and (max-width: 1024px) {
+  .carousel-item button {
+    top: 115%;
+
+}
+  .back {
+    left: 118px;
+
+}
+.next {
+  right: 116px;
+
+}
 }
 
 @media only screen and (min-width: 1025px) {
+  .carousel-item button {
+    top: 115%;
+
+}
+  .back {
+    left: 118px;
+
+}
+
+.next {
+  right: 116px;
+
+}
 }

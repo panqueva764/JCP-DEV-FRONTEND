@@ -50,14 +50,14 @@ export class HeaderComponent implements OnInit {
    * Realiza el desplazamiento al componente principal.
    * Desplaza la página hacia la sección principal.
    */
-  scrollToMain(): void {
+scrollToMain(): void {
     const mainSection = document.getElementById('mainSection');
     if (mainSection) {
-      const topOffset = 100; // Ajusta este valor según sea necesario
-      const desiredPosition = mainSection.offsetTop - topOffset;
-      const increment = 10; // Ajusta el incremento de desplazamiento según sea necesario
-      const interval = 10; // Ajusta el intervalo de tiempo entre cada incremento
-  
+      const topOffset = 100;
+      const desiredPosition = mainSection.offsetTop;
+      const increment = 10;
+      const interval = 10;
+
       let currentPosition = window.scrollY || window.pageYOffset;
       const scrollTowardsMain = () => {
         if (currentPosition < desiredPosition) {
@@ -76,7 +76,6 @@ export class HeaderComponent implements OnInit {
       scrollTowardsMain();
     }
   }
-  
 
   /**
    * Maneja el evento de scroll de la ventana.

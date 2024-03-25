@@ -51,9 +51,9 @@
 .scroll-icon-container {
     position: absolute;
     bottom: 45px;
-    left: 150%;
+    left: 147%;
     transform: translateX(-50%);
-    margin-top: 20px;
+    top: 100px;
     cursor: pointer;
 }
 
@@ -66,6 +66,7 @@
     height: 43px;
     background-color: rgba(255, 255, 255, 0.3);
     z-index: -1;
+    top: 224px;
     border-radius: 50%;
     transition: background-color 0.3s ease;
 }
