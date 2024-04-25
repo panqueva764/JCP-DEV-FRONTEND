@@ -162,10 +162,10 @@ img {
     background: black;
     margin-top: 90px;
     padding: 0px 22% 0px;
-        position: relative;
-  }
-  
-  .carousel-item {
+    position: relative;
+}
+
+.carousel-item {
     width: 980px;
     height: 265px;
     top: -120px;
@@ -175,31 +175,31 @@ img {
     justify-content: center;
     animation: _ngcontent-loi-c4_fadeIn 3s ease forwards;
 }
-  
-  .slides {
+
+.slides {
     display: flex;
     overflow-x: hidden;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
     animation: fadeIn 1s ease forwards;
-  }
-  
-  .slides::-webkit-scrollbar {
+}
+
+.slides::-webkit-scrollbar {
     width: 10px;
     height: 10px;
-  }
-  
-  .slides::-webkit-scrollbar-thumb {
+}
+
+.slides::-webkit-scrollbar-thumb {
     background: black;
     border-radius: 10px;
-  }
-  
-  .slides::-webkit-scrollbar-track {
+}
+
+.slides::-webkit-scrollbar-track {
     background: transparent;
-  }
-  
-  .slides>div {
+}
+
+.slides>div {
     scroll-snap-align: start;
     flex-shrink: 0;
     width: 300px;
@@ -214,34 +214,34 @@ img {
     align-items: center;
     animation: fadeIn 3s ease forwards;
     font-size: 20px;
-  }
+}
 
-  .next,
-  .back {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 40px;
-      height: 40px;
-      background-color: #3d3c49;
-      border: none;
-      border-radius: 50%;
-      color: white;
-      font-size: 14px;
-      cursor: pointer;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-  }
-  
-  .next {
-      right: -40px;
-  }
-  
-  .back {
-      left: -80px;
-  }
-  
+.next,
+.back {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    background-color: #3d3c49;
+    border: none;
+    border-radius: 50%;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.next {
+    right: -40px;
+}
+
+.back {
+    left: -80px;
+}
+
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -267,13 +267,43 @@ img {
     .back {
         left: -40px;
     }
-}  
+
+    .ov-btn-grow-box {
+
+        top: -10px;
+
+    }
+}
+
 @media only screen and (max-width: 600px) {
-  }
-  
-  @media only screen and (min-width: 601px) and (max-width: 1024px) {
-  }
-  
-  @media only screen and (min-width: 1025px) {
-  }
-  
+
+    .ov-btn-grow-box {
+
+        top: -10px;
+
+    }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+
+    .ov-btn-grow-box {
+
+        top: -10px;
+
+    }
+}
+
+@media only screen and (min-width: 1025px) {
+
+    .ov-btn-grow-box {
+
+        top: -10px;
+
+    }
+}
+
+@media screen and (max-width: 1280px) and (max-height: 800px) and (orientation: landscape) {
+    .carousel-background {
+        padding: 3px 12% 0px;
+    }
+}

@@ -195,6 +195,10 @@
     top: 700px;
   }
 
+  .carousel-background {
+    margin-top: 215px;
+  }
+
   .carousel-item {
     width: 75%;
     height: 700px;
@@ -213,8 +217,23 @@
 
 }
 
-@media only screen and (max-width: 600px) {}
+@media only screen and (max-width: 600px) {
+  .carousel-background {
+    margin-top: 215px;
+  }
 
-@media only screen and (min-width: 601px) and (max-width: 1024px) {}
+}
 
-@media only screen and (min-width: 1025px) {}
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  .carousel-background {
+    margin-top: 215px;
+  }
+
+}
+
+@media only screen and (min-width: 1025px) {
+  .carousel-background {
+    margin-top: 215px;
+  }
+
+}

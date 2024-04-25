@@ -124,7 +124,7 @@ li {
     transform: translate(-50%, -50%);
     position: absolute;
     top: 85px;
-    left: 750px;
+    left: 500px;
     transition: all 2s cubic-bezier(0.06, 0.12, 0.04, 1.1);
 }
 
@@ -141,19 +141,26 @@ li {
 @media screen and (max-width: 768px) {
     .info {
         line-height: 3;
-        margin-top: 420px;
+        margin-top: 470px;
     }
 
     .grid-list {
         display: inline-grid;
-        left: 200px;
         top: 350px;
+        left: 190px;
+
     }
     .div-buttons {
         margin-top: -380px;
     }
-}
 
+}
+/* Media query para pantallas con una resolución de 1280x800 en orientación horizontal */
+@media screen and (max-width: 1280px) and (max-height: 800px) and (orientation: landscape) {
+    .move-to-top-left {
+        left: 650px;
+    }
+}
 @media only screen and (max-width: 600px) {}
 
 @media only screen and (min-width: 601px) and (max-width: 1024px) {}

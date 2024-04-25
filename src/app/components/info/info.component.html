@@ -3,7 +3,7 @@
     <div class="skills-info">
       <h1>Habilidades</h1>
       <ng-container *ngFor="let skillType of infoData.sidebar.skills | keyvalue">
-        <h3 class="skill-type" >{{ formatSkillKey(skillType.key) }}</h3>
+        <h3 class="skill-type">{{ formatSkillKey(skillType.key) }}</h3>
         <ul class="skill-icons">
           <li *ngFor="let skill of toArray(skillType.value)">
             <a [href]="getSkillOfficialLink(skill)" target="_blank">
@@ -17,8 +17,8 @@
       <h1>Contacto</h1>
       <div class="contact-content">
         <p><a href="{{ infoData.footer.social_media.github }}" target="_blank">
-          <img src="../../../assets/images/skills/Email.jpg" alt="GitHub" class="social-media-icon">
-        </a>: {{ infoData.footer.contact.email }}</p>
+            <img src="../../../assets/images/skills/Email.jpg" alt="GitHub" class="social-media-icon">
+          </a>: {{ infoData.footer.contact.email }}</p>
         <p><a href="{{ infoData.footer.social_media.github }}" target="_blank">
             <img src="../../../assets/images/skills/Phone.png" alt="GitHub" class="social-media-icon">
           </a>: {{ infoData.footer.contact.phone }}</p>
@@ -33,6 +33,7 @@
           <a href="{{ infoData.footer.social_media.linkedin }}" target="_blank">
             <img src="../../../assets/images/skills/LinkedIn.jpg" alt="LinkedIn" class="social-media-icon">
           </a>
+        </div>
       </div>
     </div>
   </div>
