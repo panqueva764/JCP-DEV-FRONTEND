@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class HeaderService {
-  private apiUrl = 'https://jcp-dev-backend-18b251ea1c4a.herokuapp.com/api/api-response';
+  private apiUrl = 'https://dfa48947-0068-492b-a1c1-a256ee4ce793.mock.pstmn.io/api/api-response';
 
   constructor(private http: HttpClient) {}
 
