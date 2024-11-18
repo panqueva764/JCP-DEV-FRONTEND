@@ -1,5 +1,6 @@
 {
   "hosting": {
+    "target": "jcp-dev",
     "public": "dist/jcp-dev-front",
     "ignore": [
       "firebase.json",

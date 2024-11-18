@@ -1,5 +1,15 @@
 {
   "projects": {
     "default": "jcp-dev"
-  }
+  },
+  "targets": {
+    "jcp-dev": {
+      "hosting": {
+        "jcp-dev": [
+          "jcp-dev"
+        ]
+      }
+    }
+  },
+  "etags": {}
 }
