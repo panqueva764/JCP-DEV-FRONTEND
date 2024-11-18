@@ -67,6 +67,8 @@ export class ExperiencesComponent {
    */
   getExperienceUrl(name: string): string {
     switch (name) {
+      case 'Michael Page':
+        return 'https://www.michaelpage.com.co/';
       case 'Motor Flash':
         return 'https://motorflash.com';
       case 'Asesoftware':
