@@ -43,23 +43,22 @@ export class ExperiencesComponent {
     title.isVisible = !title.isVisible;
   }
 
-  /**
-   * Desplaza el contenedor de diapositivas hacia la izquierda.
-   */
-  scrollLeft(): void {
+  scrollRight() {
     if (this.slidesContainer) {
-      this.slidesContainer.nativeElement.scrollLeft -= 300;
+    const container = this.slidesContainer.nativeElement;
+    const slideWidth = container.querySelector('.carousel-slide').offsetWidth;
+    container.scrollLeft += slideWidth + 13; // 13px es el margen derecho
     }
   }
-
-  /**
-   * Desplaza el contenedor de diapositivas hacia la derecha.
-   */
-  scrollRight(): void {
+  
+  scrollLeft() {
     if (this.slidesContainer) {
-      this.slidesContainer.nativeElement.scrollLeft += 300;
+    const container = this.slidesContainer.nativeElement;
+    const slideWidth = container.querySelector('.carousel-slide').offsetWidth;
+    container.scrollLeft -= slideWidth + 13; // Ajusta el desplazamiento
     }
   }
+  
 
   /**
    * Obtiene la URL correspondiente a la experiencia.

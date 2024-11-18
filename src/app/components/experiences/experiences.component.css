@@ -10,7 +10,7 @@
 }
 
 .carousel-item {
-  width: 600px;
+  width: 600px; /* Debe coincidir con el ancho */
   height: 400px;
   margin-right: 135px;
   background-color: #ffffff;
@@ -22,10 +22,16 @@
 
 .slides {
   display: flex;
-  overflow-x: hidden;
+  overflow-x: auto; /* Cambiado de hidden a auto */
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
+}
+
+.slides > div {
+  width: 600px; /* Ajusta el ancho */
+  flex-shrink: 0;
+  scroll-snap-align: start;
 }
 
 .slides::-webkit-scrollbar {
@@ -271,7 +277,7 @@
   }
 }
 
-
+<
 @media screen and (max-width: 768px) {
 
   .carousel-background {
@@ -279,10 +285,11 @@
   }
 
   .carousel-item {
-    width: 75%;
+    width: 600px; /* Debe coincidir con el ancho */
     height: 700px;
     max-width: 550px;
     margin: 0 auto;
+    
   }
 
   br {
